@@ -1,0 +1,120 @@
+/* Reset padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55); /* Gradiente escuro para o fundo */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.quiz-container {
+    background: #2b3a4a; /* Cor sólida escura no contêiner */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 350px;
+    max-width: 100%;
+    animation: fadeIn 1s ease;
+}
+
+.quiz-header h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3f5765; /* Fundo mais escuro nas opções */
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.option:hover {
+    background-color: #4bc910; /* Verde mais vibrante ao passar o mouse */
+    transform: translateY(-5px);
+}
+
+.option input {
+    display: none;
+}
+
+.option-text {
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.option input:checked + .option-text {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .quiz-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .quiz-header h2 {
+        font-size: 20px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
